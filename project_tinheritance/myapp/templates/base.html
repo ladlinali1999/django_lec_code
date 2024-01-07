@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>{% block title %} Base {% endblock %}</title>
+    <style>
+        .header{
+            border: 2px solid red;
+            height: 100px;
+            background-color: aquamarine;
+        }
+        ul{
+            list-style-type: none;          
+        }
+        li{
+            display: inline-block;
+            margin-left: 100px;
+        }
+        footer {
+            text-align: center;
+            padding: 3px;
+            background-color: DarkSalmon;
+            color: white;
+            }
+    </style>
+</head>
+<body>
+  
+
+    <!-- <header class="header">
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+    </ul>
+    </header> -->
+    <!-- render header page -->
+    {% include 'header.html' %}
+
+    <!-- to show dynamic data -->
+    {% block content %}
+    <h1>Base Page</h1>
+    {% endblock %}
+
+    {% include 'footer.html' %}
+</body>
+</html>
